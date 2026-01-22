@@ -2,7 +2,7 @@
 
 **Flow Auto V2** คือเครื่องมือช่วยสร้างภาพ AI แบบอัตโนมัติ (AI Image Generation Automation) บน Google Chrome ช่วยให้คุณรันคำสั่ง Prompt จำนวนมากได้อย่างต่อเนื่องโดยไม่ต้องเฝ้าหน้าจอ พร้อมฟีเจอร์การตั้งค่าหน่วงเวลาและวนซ้ำที่ยืดหยุ่น
 
-![Flow Auto V2 UI](image_72ad85.png)
+![Flow Auto V2 UI](flow-auto-extension-V2.png)
 *(หน้าต่างควบคุมหลักของโปรแกรม Flow Auto V2)*
 
 ---
