@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow Auto Generator V2</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">🎨</span>
+      <span class="logo-text">Flow Auto V2</span>
+    </div>
+    <div id="connectionStatus" class="status-badge">
+      <span class="status-dot"></span>
+      <span class="status-text">กำลังเชื่อมต่อ...</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Prompt Section -->
+    <section class="section">
+      <label class="section-label">
+        <span class="label-icon">✏️</span>
+        Prompts (หนึ่ง prompt ต่อหนึ่งบรรทัด)
+      </label>
+      <textarea id="promptsInput" class="prompts-textarea"
+        placeholder="ใส่ prompt ที่ต้องการสร้าง...&#10;แต่ละบรรทัดจะสร้างภาพใหม่&#10;&#10;ตัวอย่าง:&#10;a beautiful sunset over mountains&#10;a cute cat playing with yarn"
+        rows="6"></textarea>
+      <div class="prompt-actions">
+        <input type="file" id="fileInput" accept=".txt" style="display: none;">
+        <button id="btnLoadFile" class="btn btn-file">
+          <span class="btn-icon">📁</span>
+          โหลดจากไฟล์
+        </button>
+        <button id="btnClearPrompts" class="btn btn-clear">
+          <span class="btn-icon">🗑️</span>
+          ล้าง
+        </button>
+      </div>
+      <div class="prompt-info">
+        <span id="promptCount">0 prompts</span>
+      </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="section">
+      <div class="settings-row">
+        <div class="setting-item">
+          <label class="setting-label">⏱️ หน่วงเวลา (วินาที)</label>
+          <input type="number" id="delayInput" class="setting-input" value="20" min="1" max="60">
+        </div>
+        <div class="setting-item">
+          <label class="setting-label">🔄 ซ้ำ (ครั้ง)</label>
+          <input type="number" id="repeatInput" class="setting-input" value="1" min="1" max="10">
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="section actions">
+      <button id="btnGenerate" class="btn btn-primary">
+        <span class="btn-icon">🚀</span>
+        เริ่มสร้าง
+      </button>
+      <button id="btnStop" class="btn btn-danger" disabled>
+        <span class="btn-icon">⏹️</span>
+        หยุด
+      </button>
+    </section>
+
+    <!-- Progress -->
+    <section id="progressSection" class="section progress-section" style="display: none;">
+      <div class="progress-header">
+        <span id="progressText">กำลังสร้าง...</span>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section stats">
+      <div class="stat-item">
+        <span class="stat-value" id="statGenerated">0</span>
+        <span class="stat-label">สร้างแล้ว</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="statDownloaded">0</span>
+        <span class="stat-label">ดาวน์โหลด</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>Flow Auto Generator V2</span>
+    <a href="#" id="helpLink">❓ ช่วยเหลือ</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
